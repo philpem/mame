@@ -2103,6 +2103,15 @@ ROM_START ( mb1212c )
 ROM_END
 
 
+// General Instrument ANIC
+ROM_START ( anic )
+	// 0: BIOS-String: ESC2-1223-083090-K2 - 286 BIOS AMI for MB-1212C version 1.1
+	ROM_REGION16_LE(0x20000, "bios", 0)
+	ROM_SYSTEM_BIOS(0, "anic_1", "anic_1")
+	ROMX_LOAD( "ANIC 135-154-000 Intel D27C512-120.bin", 0x10000, 0x10000, CRC(8ac620d0) SHA1(f10dcd13687ba43d8789786aa39d38c1c6373488), ROM_BIOS(0) )
+ROM_END
+
+
 // ***** 286 motherboards using the Headland G2 chipset
 
 // LM-103S - 1 8-bit ISA, 6 16-bit ISA - RAM: 4xSIPP30, 2 banks DIP (each bank has 4xV53C104AP80 and 2x16pin empty sockets)
@@ -5812,6 +5821,7 @@ COMP( 198?, magb233,   ibm5170, 0,       ibm5162,   0,     at_state,     init_at
 COMP( 198?, magb236,   ibm5170, 0,       ibm5162,   0,     at_state,     init_at,        "Magitronic Technology", "Magitronic B236", MACHINE_NOT_WORKING )
 COMP( 19??, mat286,    ibm5170, 0,       ibm5162,   0,     at_state,     init_at,        "<unknown>",   "MAT286 Rev.D", MACHINE_NOT_WORKING )
 COMP( 199?, mb1212c,   ibm5170, 0,       atturbo,   0,     at_state,     init_at,        "Biostar",     "MB-1212C", MACHINE_NOT_WORKING )
+COMP( 199?, anic,      ibm5170, 0,       atturbo,   0,     at_state,     init_at,        "General Instrument",     "ANIC", MACHINE_NOT_WORKING )
 COMP( 199?, mba009,    ibm5170, 0,       atturbo,   0,     at_state,     init_at,        "<unknown>", "HLB-286 MBA-009", MACHINE_NOT_WORKING )
 COMP( 199?, micral45,  ibm5170, 0,       micral45,  0,     at_state,     init_at,        "Bull", "Micral 45", MACHINE_NOT_WORKING )
 COMP( 199?, minisys2k, ibm5170, 0,       atturbo,   0,     at_state,     init_at,        "SIIG", "MiniSys 2000", MACHINE_NOT_WORKING )
